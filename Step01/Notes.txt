@@ -1,4 +1,4 @@
-﻿Step01 17.5
+﻿Step01 - 17.5
 
 	+1. Step01 isimli bir proje oluşturalım.
 
@@ -12,9 +12,19 @@
 		. Microsoft.EntityFrameworkCore.Design (Model tasarımlarının VT tarafında aktarılması için)
 		. Microsoft.EntityFrameworkCore.Tools (Yardımcı komutların bulunduğu)
 
-	4. VT mizde olacak olan tabloların yani code tarafındaki Modellerin (class) oluşturulması. (\Models)
+	+4. VT mizde olacak olan tabloların yani code tarafındaki Modellerin (class) oluşturulması. (\Models)
 		. Actor.cs
 		. Producer.cs
 		. Cinema.cs
 		. Movie.cs
 			Movie bilgilerimde category türünü gösterek bir alanımız olacak. Bunun tanımlarını ayrı bir class yapısı içinde tutalım(Enum yapısı). Bu tür tanımların da bulunduğu ayrı bir klasör yaratalım (\Data)
+
+	-4.1 Class Diagram 
+
+	5. Model İlişkilendirmeleri (Relations)
+		
+		. Cinema <-->> Movie (bir Cinemada bir kaç Movie oynayabilir)
+
+		. Producer <-->> Movie (bir Producer bir kaç Movie yaratmış/yönetmiş olabilir)
+
+		. Birçok Actor bir çok Movie de oynayabilir (many-to-many ilişki). Bundan dolayı Actor ile Movie class ları arasındaki böyle bir ilişkiyi tanımlayabilmek için ara bir modelden faydalanacağız (Actor_Movie.cs - Junction yapısı).
