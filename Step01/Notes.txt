@@ -2,7 +2,7 @@
 
 	+1. Step01 isimli bir proje oluşturalım.
 
-	+2. Proje adım adım ilerlewme şeklinde yapılacağı için (Step01,Step02,Step03,...) ayarı ayrı ama birbirini takip edecek ve derleme sonrası tek bir Assembly dosyası olabilmesi için gerekli bazı düzenlemeleri yapalım
+	+2. Proje adım adım ilerleme şeklinde yapılacağı için (Step01,Step02,Step03,...) ayarı ayrı ama birbirini takip edecek ve derleme sonrası tek bir Assembly dosyası olabilmesi için gerekli bazı düzenlemeleri yapalım
 		Project/Properties kısmından yapılacak
 			AssemblyName ve Default NameSpaces deki tanımları -> eTickets
 
@@ -21,7 +21,7 @@
 
 	-4.1 Class Diagram 
 
-	5. Model İlişkilendirmeleri (Relations)
+	+5. Model İlişkilendirmeleri (Relations)
 		
 		. Cinema <-->> Movie (bir Cinemada bir kaç Movie oynayabilir)
 
@@ -40,3 +40,11 @@
 			. Actor.cs --> Relations
 
 			. Movies.cs --> Relations
+
+	+6. Uygulamanın DbContext yapısının eklenmesi (Db-Code tercuman)
+		. \Data\AppDbContext.cs.. ileryeyen adımlarda düzenleyeceğiz.
+
+	+7. Uygulamanın ana giriş noktası olan Program.cs classında bu DbContext yapısı tanımlayalım. İlerleyen adımlarda düzenleyeceğiz.
+
+	8. AppDbContext.cs deki düzenlemeler.
+		Bu sınıf yaratılırken modellerimizin birbirine bağlanması, model yapı ve tanımlarının VT tarafındaki tablo karşılıklarının tanımlanması işlemleri. ??? Actor_Movie ??

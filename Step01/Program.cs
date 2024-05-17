@@ -1,3 +1,5 @@
+using eTickets.Data;
+
 namespace Step01
 {
     public class Program
@@ -8,6 +10,12 @@ namespace Step01
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            // DbContext Configuration
+
+            // 7.
+            builder.Services.AddDbContext<AppDbContext>();
+
 
             var app = builder.Build();
 
