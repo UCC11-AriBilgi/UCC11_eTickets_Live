@@ -1,0 +1,20 @@
+﻿Step01 17.5
+
+	+1. Step01 isimli bir proje oluşturalım.
+
+	+2. Proje adım adım ilerlewme şeklinde yapılacağı için (Step01,Step02,Step03,...) ayarı ayrı ama birbirini takip edecek ve derleme sonrası tek bir Assembly dosyası olabilmesi için gerekli bazı düzenlemeleri yapalım
+		Project/Properties kısmından yapılacak
+			AssemblyName ve Default NameSpaces deki tanımları -> eTickets
+
+	+3. Arka planda bir VT olacağı için gerekli NuGet paketlerinin yüklenmesi (EF için)
+		. Microsoft.EntityFrameworkCore (VT <-> Code arası Tercüman)
+		. Microsoft.EntityFrameworkCore.SqlServer (SqlServer işlemleri için)
+		. Microsoft.EntityFrameworkCore.Design (Model tasarımlarının VT tarafında aktarılması için)
+		. Microsoft.EntityFrameworkCore.Tools (Yardımcı komutların bulunduğu)
+
+	4. VT mizde olacak olan tabloların yani code tarafındaki Modellerin (class) oluşturulması. (\Models)
+		. Actor.cs
+		. Producer.cs
+		. Cinema.cs
+		. Movie.cs
+			Movie bilgilerimde category türünü gösterek bir alanımız olacak. Bunun tanımlarını ayrı bir class yapısı içinde tutalım(Enum yapısı). Bu tür tanımların da bulunduğu ayrı bir klasör yaratalım (\Data)
