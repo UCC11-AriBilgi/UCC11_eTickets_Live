@@ -28,3 +28,15 @@
 		. Producer <-->> Movie (bir Producer bir kaç Movie yaratmış/yönetmiş olabilir)
 
 		. Birçok Actor bir çok Movie de oynayabilir (many-to-many ilişki). Bundan dolayı Actor ile Movie class ları arasındaki böyle bir ilişkiyi tanımlayabilmek için ara bir modelden faydalanacağız (Actor_Movie.cs - Junction yapısı).
+			Movie <-->> Actor_Movie (bir Movie de bir çok Actor olabilir)
+			Actor <-->> Actor_Movie (bir Actor bir çok Movie de oynayabilir)
+
+		5.1 Modellerimiz üzerinde ilişkilendirmelerin tanımlanması
+			
+			. Producer.cs --> Relations
+
+			. Cinema.cs --> Relations
+
+			. Actor.cs --> Relations
+
+			. Movies.cs --> Relations
