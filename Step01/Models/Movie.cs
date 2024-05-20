@@ -1,4 +1,5 @@
 ﻿using eTickets.Data.Enums;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace eTickets.Models
 {
@@ -19,6 +20,23 @@ namespace eTickets.Models
         public DateTime? EndDate { get; set; }
 
         public MovieCategory? MovieCategory { get; set; } // Burayı besleyecek yer MovieCategory enum'ı
+
+        // Relations
+        // Many-to-Many
+
+        public List<Actor_Movie> Actors_Movies { get; set; }
+
+        // Cinema
+        // One-to-Many
+        public int CinemaId { get; set; }
+        [ForeignKey("CinemaId")]
+        public Cinema Cinema { get; set; }
+
+        // Producer
+        // One-to-Many
+        public int ProducerId { get; set; }
+        [ForeignKey("ProducerId")]
+        public Producer Producer { get; set;}
 
     }
 }

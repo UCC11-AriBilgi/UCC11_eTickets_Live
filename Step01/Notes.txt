@@ -63,3 +63,6 @@
 
 	+13. VT nin yaratılabilmesi için PM Console dan
 		PM> update-database komutu çalıştırılır. VT boş olarak yaratılmış olur.
+
+	14. Şu an VT yapı olarak oluştu . Ama içinde herhangi bir veri yok. Kod tarafından fake/dummy data yaratacak şekilde bazı düzenlemeler yapalım.
+		Data dizini altında AppDbInitializer.cs isminde bir class tanımlayalım
