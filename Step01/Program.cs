@@ -1,4 +1,5 @@
 using eTickets.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace Step01
 {
@@ -14,8 +15,13 @@ namespace Step01
             // DbContext Configuration
 
             // 7.
-            builder.Services.AddDbContext<AppDbContext>();
-
+            //builder.Services.AddDbContext<AppDbContext>();
+            // 10
+            // appsettings.json dosyasý içinde bulunan Connection Stringi öðreniyor.
+            builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer
+            (builder.Configuration.GetConnectionString("Connection")));
+      
+                
 
             var app = builder.Build();
 

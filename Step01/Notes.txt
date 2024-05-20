@@ -46,5 +46,20 @@
 
 	+7. Uygulamanın ana giriş noktası olan Program.cs classında bu DbContext yapısı tanımlayalım. İlerleyen adımlarda düzenleyeceğiz.
 
-	8. AppDbContext.cs deki düzenlemeler.
+	+8. AppDbContext.cs deki düzenlemeler.
 		Bu sınıf yaratılırken modellerimizin birbirine bağlanması, model yapı ve tanımlarının VT tarafındaki tablo karşılıklarının tanımlanması işlemleri. ??? Actor_Movie ??
+
+		Artık modellerimin VT tarafındaki karşılıkları olacak DbSet tanımlarının yapılması.
+
+	+9. VT ye bağlantı ve işlemler için bana bir ConnectionString gerekli.Bu ConnStr bilgisinin pek ortalarda gözükmesi pek istenmez. Bu yüzden daha gizli olan bir dosya var.(appsettings.json) ConnStr buraya yazılması daha doğru bir yol.
+
+	+10. Program.cs altında daha önceden belirtimini yapmış olduğumuz AddDbContext kısmında bu config değerlerini okuyacak öğrenecek gerekli düzenleme
+
+	+11. Şimdi sıra benim DB yapımı ortaya(c# ca) çıkarmaya
+		Nuget PM console altında
+			PM>add-migration 01_Initial
+
+	+12. İşlem başarılı ise Migration isimli dizinin altında ilgili VT yapısının kodsal halini gösteren bir sınıf oluşuyor(Bunu kendi kullanıyor). Not: Daha henüz VT oluşmadı.
+
+	+13. VT nin yaratılabilmesi için PM Console dan
+		PM> update-database komutu çalıştırılır. VT boş olarak yaratılmış olur.
