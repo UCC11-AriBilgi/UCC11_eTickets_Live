@@ -14,6 +14,6 @@ namespace eTickets.Models
         public string? Bio { get; set; }
 
         // Relations
-        public List<Movie>? Movies { get; set; }
+        public List<Movie>? Movies { get; set; } // Bu producerın yönettiği filmler
     }
 }
