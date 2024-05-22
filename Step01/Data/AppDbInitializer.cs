@@ -13,41 +13,47 @@ namespace eTickets.Data
 
                 context.Database.EnsureCreated(); // Db yaratıldığından emin ol.
 
-                // Cinema Data
-                context.Cinemas.AddRange(new List<Cinema>()
+                // Cinema Data (5)
+                if (!context.Actors.Any())
                 { 
-                    new Cinema()
+                    context.Cinemas.AddRange(new List<Cinema>()
                     {
-                        Name="Cinema 1",
-                        Logo="http://dotnethow.net/images/cinemas/cinema-1.jpeg",
-                        Description= "Bu Cinema 1 dir"
-                    },
-                    new Cinema()
-                    {
-                        Name = "Cinema 2",
-                        Logo = "http://dotnethow.net/images/cinemas/cinema-2.jpeg",
-                        Description = "Bu Cinema 2 dir"
-                    },
-                    new Cinema()
-                    {
-                        Name = "Cinema 3",
-                        Logo = "http://dotnethow.net/images/cinemas/cinema-3.jpeg",
-                        Description = "Bu Cinema 3 dir"
-                    },
-                    new Cinema()
-                    {
-                        Name = "Cinema 4",
-                        Logo = "http://dotnethow.net/images/cinemas/cinema-4.jpeg",
-                        Description = "Bu Cinema 4 dir"
-                    },
-                    new Cinema()
-                    {
-                        Name = "Cinema 5",
-                        Logo = "http://dotnethow.net/images/cinemas/cinema-5.jpeg",
-                        Description = "Bu Cinema 5 dir"
-                    }
-                });
-                context.SaveChanges(); // VT tarafına kayıtların yazılması için
+                        new Cinema()
+                        {
+                            Name="Cinema 1",
+                            Logo="http://dotnethow.net/images/cinemas/cinema-1.jpeg",
+                            Description= "Bu Cinema 1 dir"
+                        },
+                        new Cinema()
+                        {
+                            Name = "Cinema 2",
+                            Logo = "http://dotnethow.net/images/cinemas/cinema-2.jpeg",
+                            Description = "Bu Cinema 2 dir"
+                        },
+                        new Cinema()
+                        {
+                            Name = "Cinema 3",
+                            Logo = "http://dotnethow.net/images/cinemas/cinema-3.jpeg",
+                            Description = "Bu Cinema 3 dir"
+                        },
+                        new Cinema()
+                        {
+                            Name = "Cinema 4",
+                            Logo = "http://dotnethow.net/images/cinemas/cinema-4.jpeg",
+                            Description = "Bu Cinema 4 dir"
+                        },
+                        new Cinema()
+                        {
+                            Name = "Cinema 5",
+                            Logo = "http://dotnethow.net/images/cinemas/cinema-5.jpeg",
+                            Description = "Bu Cinema 5 dir"
+                        }
+                    });                          
+                            
+                    context.SaveChanges(); // VT tarafına kayıtların yazılması için
+
+                }
+               
 
                 // Actor(5)
                 if(!context.Actors.Any()) // Eğer Actors tablosunda herhangi bir kayıt yoksa
@@ -128,7 +134,6 @@ namespace eTickets.Data
                 }
 
                 // Movie (6)
-
                 if (!context.Movies.Any())
                 {
                     context.Movies.AddRange(new List<Movie>()
@@ -205,6 +210,33 @@ namespace eTickets.Data
                             ProducerId=5,
                             MovieCategory = Enums.MovieCategory.Drama
                         }
+                    });
+
+                    context.SaveChanges();
+                }
+
+                // Actors & Movies
+                if (!context.Actors_Movies.Any())
+                {
+                    context.Actors_Movies.AddRange(new List<Actor_Movie>()
+                    {
+                        new Actor_Movie() { ActorId=1,MovieId=1 },
+                        new Actor_Movie() { ActorId=3,MovieId=1 },
+                        new Actor_Movie() { ActorId=1,MovieId=2 },
+                        new Actor_Movie() { ActorId=4,MovieId=2 },
+                        new Actor_Movie() { ActorId=1,MovieId=3 },
+                        new Actor_Movie() { ActorId=2,MovieId=3 },
+                        new Actor_Movie() { ActorId=5,MovieId=3 },
+                        new Actor_Movie() { ActorId=2,MovieId=4 },
+                        new Actor_Movie() { ActorId=3,MovieId=4 },
+                        new Actor_Movie() { ActorId=4,MovieId=4 },
+                        new Actor_Movie() { ActorId=2,MovieId=5 },
+                        new Actor_Movie() { ActorId=3,MovieId=5 },
+                        new Actor_Movie() { ActorId=4,MovieId=5 },
+                        new Actor_Movie() { ActorId=5,MovieId=5 },
+                        new Actor_Movie() { ActorId=3,MovieId=6 },
+                        new Actor_Movie() { ActorId=4,MovieId=6 },
+                        new Actor_Movie() { ActorId=1,MovieId=6 }
                     });
 
                     context.SaveChanges();

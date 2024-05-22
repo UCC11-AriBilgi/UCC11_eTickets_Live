@@ -44,6 +44,10 @@ namespace Step01
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
 
+            // 15
+            AppDbInitializer.Seed(app);
+
+
             app.Run();
         }
     }
