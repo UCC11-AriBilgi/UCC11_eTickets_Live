@@ -15,7 +15,9 @@ namespace eTickets.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            var cinemaData = _context.Cinemas.ToList(); // VT den veri okunuyor
+
+            return View(cinemaData);
         }
     }
 }

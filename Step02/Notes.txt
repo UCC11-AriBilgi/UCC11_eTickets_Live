@@ -79,9 +79,19 @@ Step02 - Controller/View 22.5
 		. Projenin tümünün uyumlu olabilmesi için gerekli Namespace,Assembly ayarlamaları(eTickets)
 		. EF kullanıldığı için bu paketleri yükleyelim. Copy sırasında gelmiyor o yüzden
 
-	16. Controllerların oluşturulması
+	+16. Controllerların oluşturulması
 		(Herbir controller VT ile ilişkili olacağından context yapısını controller üzerine tanımlayalım.(injecting)
+		
 		ActorsController
 		ProducersController
 		CinemasController
 		MoviesController
+
+	17. Controller lara bağlı şekilde ilk olarak Index View'ların oluşturulması.
+		Index view lar yapılacak olan VT üzerindeki ilgili tablolardan verileri çekip göstermek olacak.
+			! Viewlar oluşturulurken bazı hazır templateler var.Bunlardan yararlanabiliriz
+
+		Views\Actors\Index.cshtml
+		Views\Producers\Index.cshtml
+		Views\Cinemas\Index.cshtml
+		Views\Movies\Index.cshtml

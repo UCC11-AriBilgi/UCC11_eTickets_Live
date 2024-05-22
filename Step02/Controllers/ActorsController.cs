@@ -14,9 +14,12 @@ namespace eTickets.Controllers
             _context = context;    
         }
 
+        // 17
         public IActionResult Index()
         {
-            return View();
+            var actorData=_context.Actors.ToList(); // VT den veri okunuyor
+
+            return View(actorData);
         }
     }
 }

@@ -16,7 +16,9 @@ namespace eTickets.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var producerData = _context.Producers.ToList(); // VT den veri okunuyor
+
+            return View(producerData);
         }
     }
 }
