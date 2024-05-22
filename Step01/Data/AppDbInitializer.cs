@@ -49,7 +49,7 @@ namespace eTickets.Data
                 });
                 context.SaveChanges(); // VT tarafına kayıtların yazılması için
 
-                // Actor
+                // Actor(5)
                 if(!context.Actors.Any()) // Eğer Actors tablosunda herhangi bir kayıt yoksa
                 {
                     context.Actors.AddRange(new List<Actor>()
@@ -88,7 +88,7 @@ namespace eTickets.Data
                     context.SaveChanges();
                 }
 
-                // Producer
+                // Producer (5)
                 if (!context.Producers.Any()) // Eğer tabloda herhangi bir kayıt yoksa
                 {
                     context.Producers.AddRange(new List<Producer>()
@@ -127,7 +127,7 @@ namespace eTickets.Data
                     context.SaveChanges();
                 }
 
-                // Movie
+                // Movie (6)
 
                 if (!context.Movies.Any())
                 {
