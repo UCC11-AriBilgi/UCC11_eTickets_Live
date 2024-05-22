@@ -75,7 +75,13 @@ Step02 - Controller/View 22.5
 
 	Not : 
 		. Solution içinde Step02 isimli yeni proje açalım.
-		. Step01 içindeki yapılanları bu projeye kopyalayalım.
-			(Controller,Data,Migrations,Models,ProjectItems,Views,appsettings.json,Program.cs)
+		. Step01 içindeki yapılanları bu projeye kopyalayalım.	(Controller,Data,Migrations,Models,ProjectItems,Views,appsettings.json,Program.cs)
 		. Projenin tümünün uyumlu olabilmesi için gerekli Namespace,Assembly ayarlamaları(eTickets)
 		. EF kullanıldığı için bu paketleri yükleyelim. Copy sırasında gelmiyor o yüzden
+
+	16. Controllerların oluşturulması
+		(Herbir controller VT ile ilişkili olacağından context yapısını controller üzerine tanımlayalım.(injecting)
+		ActorsController
+		ProducersController
+		CinemasController
+		MoviesController
