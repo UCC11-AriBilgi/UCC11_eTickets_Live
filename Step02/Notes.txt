@@ -69,3 +69,13 @@
 		ve içine VT tarafındaki tablolarda bulunacak dummy verileri kodlayalım.
 
 	+15. Program.cs(uygulamanın ana giriş noktası) altına bu veri yaratma kısmını ekleyelim. Ve çalıştıralım.
+
+--------------------------------------------------------------------------------------
+Step02 - Controller/View 22.5
+
+	Not : 
+		. Solution içinde Step02 isimli yeni proje açalım.
+		. Step01 içindeki yapılanları bu projeye kopyalayalım.
+			(Controller,Data,Migrations,Models,ProjectItems,Views,appsettings.json,Program.cs)
+		. Projenin tümünün uyumlu olabilmesi için gerekli Namespace,Assembly ayarlamaları(eTickets)
+		. EF kullanıldığı için bu paketleri yükleyelim. Copy sırasında gelmiyor o yüzden
