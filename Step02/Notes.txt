@@ -95,3 +95,5 @@ Step02 - Controller/View 22.5
 		Views\Producers\Index.cshtml
 		Views\Cinemas\Index.cshtml
 		Views\Movies\Index.cshtml
+
+		Actors,Producers,Cinemas viewlarında Bootstrap yapısına göre değişiklikler. ikonlar
