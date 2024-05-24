@@ -87,7 +87,7 @@ Step02 - Controllers/Views 22.5
 		CinemasController
 		MoviesController
 
-	17. Controller lara bağlı şekilde ilk olarak Index View'ların oluşturulması.
+	+17. Controller lara bağlı şekilde ilk olarak Index View'ların oluşturulması.
 		Index view lar yapılacak olan VT üzerindeki ilgili tablolardan verileri çekip göstermek olacak.
 			! Viewlar oluşturulurken bazı hazır templateler var.Bunlardan yararlanabiliriz
 
@@ -111,3 +111,5 @@ Step02 - Controllers/Views 22.5
 		Model\Producer.cs
 		Model\Cinema.cs
 		Model\Movie.cs
+
+	18. Şu ana kadar yapmış olduklarımıza manuel olarak eriştik. Artık bir menü yapısı geliştirelim. Bu menü yapısı için _Layout.cshtml üzerinde bazı değişiklikler yapacağız.
