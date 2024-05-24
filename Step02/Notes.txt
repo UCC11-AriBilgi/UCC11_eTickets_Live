@@ -100,6 +100,14 @@ Step02 - Controllers/Views 22.5
 
 		(24.05.2024)
 		+ Views\Actors\Index.cshtml
-		- Views\Producers\Index.cshtml
-		- Views\Cinemas\Index.cshtml
+		+ Views\Producers\Index.cshtml
+		+ Views\Cinemas\Index.cshtml
 		- Views\Movies\Index.cshtml
+			Movie view için liste yapısı yerine Bootstrap yapısına göre düzenleme yapılacak. Bu yapıda "CardViews" yapısı kullanılacak. (Bootstrap Card yapısı)(Bazı yyerlerde actionlar daha sonra doldurulmak için boş bırakıldı)
+
+		17.1. Bootstrap yapısına göre düzenlemeler yapılırken ekranda görülecek text bilgileri kendimize göre düzenleyebiliriz. (Default olarak modellerdeki Field Name leri getiriyor. Bunları kendimize göre düzenleyebiliriz) Bunun için ilgili modelimize gidip ayarlamaları orada yapmamız gerekiyor.
+
+		Model\Actor.cs
+		Model\Producer.cs
+		Model\Cinema.cs
+		Model\Movie.cs
