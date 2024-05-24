@@ -71,13 +71,13 @@
 	+15. Program.cs(uygulamanın ana giriş noktası) altına bu veri yaratma kısmını ekleyelim. Ve çalıştıralım.
 
 --------------------------------------------------------------------------------------
-Step02 - Controller/View 22.5
+Step02 - Controllers/Views 22.5
 
 	Not : 
 		. Solution içinde Step02 isimli yeni proje açalım.
 		. Step01 içindeki yapılanları bu projeye kopyalayalım.	(Controller,Data,Migrations,Models,ProjectItems,Views,appsettings.json,Program.cs)
-		. Projenin tümünün uyumlu olabilmesi için gerekli Namespace,Assembly ayarlamaları(eTickets)
-		. EF kullanıldığı için bu paketleri yükleyelim. Copy sırasında gelmiyor o yüzden
+		. Projenin tümünün uyumlu olabilmesi için gerekli Namespace,Assembly ayarlamaları(eTickets olocak şekilde)
+		. EF paketlerini yükleyelim. Copy sırasında gelmiyor o yüzden
 
 	+16. Controllerların oluşturulması
 		(Herbir controller VT ile ilişkili olacağından context yapısını controller üzerine tanımlayalım.(injecting)
@@ -96,4 +96,10 @@ Step02 - Controller/View 22.5
 		Views\Cinemas\Index.cshtml
 		Views\Movies\Index.cshtml
 
-		Actors,Producers,Cinemas viewlarında Bootstrap yapısına göre değişiklikler. ikonlar
+		Actors,Producers,Cinemas viewlarında Bootstrap yapısına göre değişiklikler. 
+
+		(24.05.2024)
+		+ Views\Actors\Index.cshtml
+		- Views\Producers\Index.cshtml
+		- Views\Cinemas\Index.cshtml
+		- Views\Movies\Index.cshtml
