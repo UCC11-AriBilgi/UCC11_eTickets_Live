@@ -122,5 +122,19 @@ Step03 - Verilerle Çalışmak 27.5
 	Not : 
 		. Solution içinde Step03 isimli yeni proje açalım.
 		. Step02 içindeki yapılanları bu projeye kopyalayalım.	(Controller,Data,Migrations,Models,ProjectItems,Views,appsettings.json,Program.cs)
-		. Projenin tümünün uyumlu olabilmesi için gerekli Namespace,Assembly ayarlamaları(eTickets olocak şekilde)
+		. Projenin tümünün uyumlu olabilmesi için gerekli Namespace,Assembly ayarlamaları(eTickets olcak şekilde)
 		. EF paketlerini yükleyelim. Copy sırasında gelmiyor o yüzden
+
+	Normalde veri alışverişlerinin genelde controllerlar üzerinden yapıldığı durumlar vardır. Ama bazı durumlarda bu pek efektif bir yaklaşım olmayabilir. (Özellikle birbire çok benzeyen metot yapıları VT haberleşmeleri açısından) Bunun yerine bunları birleştirecek şekilde "Service" türü yapılara yönelmek daha doğru bir seçenek olacaktır. (Olayları geriye daha derin bölgelere almak ve ortaklaştırmak(metot,işlemler...))
+
+	İlgili verilerle çalışmaya başlamadan önce gerekli herbir model için bir service interface i yaratmak ile işe başlayabiliriz. Bunu da ilgili controller a enjecte ederek veri alış verişlerini sağlayabiliriz.
+
+	Hazırlık olması açısından gerekli olacak dizin yapısını oluşturalım;
+		. Data\Inferfaces (Interface tanımları için)
+		. Data\Services (Service tanımları için)
+
+
+	* Actor verileriyle çalışmak
+	----------------------------
+
+	20. 
