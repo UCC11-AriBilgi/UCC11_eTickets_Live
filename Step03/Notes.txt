@@ -115,3 +115,12 @@ Step02 - Controllers/ Index Views 22.5
 	18. Şu ana kadar yapmış olduklarımıza manuel olarak eriştik. Artık bir menü yapısı geliştirelim. Bu menü yapısı için _Layout.cshtml üzerinde bazı değişiklikler yapacağız.
 
 	19. Uygulamanın da giriş noktasını uygulama calıştığına ilk olarak Movies sayfanın gelmesini sağlayalım. Bunu yapabileceğimiz yer Program.cs giriş noktamız.
+
+--------------------------------------------------------------------------------------
+Step03 - Verilerle Çalışmak 27.5
+
+	Not : 
+		. Solution içinde Step03 isimli yeni proje açalım.
+		. Step02 içindeki yapılanları bu projeye kopyalayalım.	(Controller,Data,Migrations,Models,ProjectItems,Views,appsettings.json,Program.cs)
+		. Projenin tümünün uyumlu olabilmesi için gerekli Namespace,Assembly ayarlamaları(eTickets olocak şekilde)
+		. EF paketlerini yükleyelim. Copy sırasında gelmiyor o yüzden
