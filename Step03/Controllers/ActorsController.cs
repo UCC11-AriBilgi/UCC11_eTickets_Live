@@ -1,5 +1,6 @@
 ﻿using eTickets.Data;
 using eTickets.Data.Interfaces;
+using eTickets.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -32,11 +33,36 @@ namespace eTickets.Controllers
         //}
 
         // 22
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var actorsData = _service.GetAll(); // Artık Service yapısı kullanılıyor.
+            //var actorsData = _service.GetAllAsync(); // Artık Service yapısı kullanılıyor.
+
+            //23
+            var actorsData = await _service.GetAllAsync(); // Artık Service yapısı kullanılıyor.
 
             return View(actorsData);
         }
+
+        // 24
+        // Get: Actors/Create
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost] // View dan gelen bilgileri yakala
+        public async Task<IActionResult> Create([Bind("FullName,ProfilePictureURL,Bio")] Actor actor)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(actor);
+            }
+
+            await _service.AddAsync(actor);
+
+            return RedirectToAction(nameof(Index));
+
+        }
+
     }
 }

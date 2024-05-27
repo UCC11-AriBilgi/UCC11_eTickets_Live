@@ -152,3 +152,11 @@ Step03 - Verilerle Çalışmak 27.5
 
 		Program.cs altına gidip bununla ilişkili düzenlemeleri yapacağız.
 
+	23. Şu ana kadar yapılan işlemler senkronize işlemler. Yani büyük bir uygulamada işler birbirlerinin bitmesini bekler. Bu yüzden genelde bu tür işlemler için asenkron(paralel tasking) yapı kullanılır.iş diğer işin bitmesini beklemez.Aynı zaman diliminde hepsi birden çalışır.
+		Bu senkron yapıyı asenkron yapıya çevirelim.
+		IActorsService
+		Ardından ActorsService e implamente etmeyi atlamıyalım.
+
+		Bu arada Task işleminin asenkron olduğunu belirmek için de metot tanımlarını tekrar adlandıralım(Async). ve Actors Controller'da da buna uygun değişiklikleri yapalım.
+
+	24. Actor verilerine bir kayıt ekleyebilmek için Create View Oluşturalım.Öncesinde metodunu yazalım.(ActorsController)
