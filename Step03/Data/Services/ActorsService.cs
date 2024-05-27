@@ -28,17 +28,26 @@ namespace eTickets.Data.Services
 
        public void Add(Actor actor)
         {
-            throw new NotImplementedException();
+            _context.Actors.Add(actor);
+            _context.SaveChanges(); // lazım ki değişiklikler VT ye yerleşsin
         }
 
         public Actor Update(int id, Actor actor)
         {
-            throw new NotImplementedException();
+            _context.Update(actor);
+
+            _context.SaveChanges();
+
+            return actor;
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            var result=_context.Actors.FirstOrDefault(a=> a.Id == id);
+
+            _context.Actors.Remove(result);
+
+            _context.SaveChanges();
         }
 
 
