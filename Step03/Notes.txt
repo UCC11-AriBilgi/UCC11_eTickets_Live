@@ -137,4 +137,11 @@ Step03 - Verilerle Çalışmak 27.5
 	* Actor verileriyle çalışmak
 	----------------------------
 
-	20. 
+	20. İlgili dizinde IActorsService.cs interface'ini oluşturalım. Burada;
+			. GetAll (Tüm kayıtları getiren metot)
+			. GetById (Id bilgisine göre istenen kayıdı getirecek)
+			. Add
+			. Update
+			. Delete metot imzalarını tanımlayalım.
+
+	21. İlgili dizinde ActorsService.cs classını Interfaceden implemente edelim. İşlemleri yapabilmemiz için de ayrıca DbContext yapısını yerleştirelim. Ve metotları yazalım
