@@ -1,4 +1,6 @@
 using eTickets.Data;
+using eTickets.Data.Interfaces;
+using eTickets.Data.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace eTickets
@@ -20,6 +22,10 @@ namespace eTickets
             // appsettings.json dosyasý içinde bulunan Connection Stringi öðreniyor.
             builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer
             (builder.Configuration.GetConnectionString("Connection")));
+
+            // 22.
+            // Service Configuration
+            builder.Services.AddScoped<IActorsService,ActorsService>();
       
                 
 

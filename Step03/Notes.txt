@@ -145,3 +145,10 @@ Step03 - Verilerle Çalışmak 27.5
 			. Delete metot imzalarını tanımlayalım.
 
 	21. İlgili dizinde ActorsService.cs classını Interfaceden implemente edelim. İşlemleri yapabilmemiz için de ayrıca DbContext yapısını yerleştirelim. Ve metotları yazalım
+
+	22. ActorsController a giderek içerdiği AppDbContext yapısının yerine IActorsService yapısını enjekte edelim.
+
+		Test edelim. Bir hata mesajı ile karşılaşacağız. Nedeni yaptığın service i bana tanıtman lazım diyor. ben tanıyamadım diyor.
+
+		Program.cs altına gidip bununla ilişkili düzenlemeleri yapacağız.
+
