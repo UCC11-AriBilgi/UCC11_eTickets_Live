@@ -162,4 +162,9 @@ Step03 - Verilerle Çalışmak 27.5
 
 		Test edelim. Program Service tanımlarının yapılmadığına ilişkin bir hata verecektir. Program.cs altına giderek bu tanımları yapalım.
 
-	24. Actor verilerine bir kayıt ekleyebilmek için Create View Oluşturalım.Öncesinde metodunu yazalım.(ActorsController)
+	24. Actor verilerine kayıt eklemek için Actors\Create yolu izliyerek gerekli ekrana geliyoruz.		Actor verilerine bir kayıt ekleyebilmek için Create View Oluşturalım.Öncesinde metodunu yazalım.(ActorsController)
+
+	25. Actor\Index View Aktor listesini getiriyor. Create tarafına daha rahat ulasabilmek için bir Create butonu yerleştirelim. Actor Controller altındaki [HttpPost] Create kısmına yönlendirelim. Test edelim.
+
+	26. Actor bilgilerinin detayını görebileceğim Metotdu ve View ı hazırlayalım. Actors/Index altında da Details butonunun ayarlamalarını yapalım.
+		Ardından Details View ı biraz bootstrap ile düzenleyelim.

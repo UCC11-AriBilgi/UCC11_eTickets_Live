@@ -64,5 +64,19 @@ namespace eTickets.Controllers
 
         }
 
+        // 26
+        // Get : Actors/Details/1
+        public async Task<IActionResult> Details(int id)
+        {
+            var actorDetails=await _service.GetByIdAsync(id);
+
+            if (actorDetails == null) 
+            {
+                return View("NotFound");
+            }
+
+            return View(actorDetails);
+        }
+
     }
 }
