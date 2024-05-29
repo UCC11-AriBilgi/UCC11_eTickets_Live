@@ -167,4 +167,10 @@ Step03 - Verilerle Çalışmak 27.5
 	25. Actor\Index View Aktor listesini getiriyor. Create tarafına daha rahat ulasabilmek için bir Create butonu yerleştirelim. Actor Controller altındaki [HttpPost] Create kısmına yönlendirelim. Test edelim.
 
 	26. Actor bilgilerinin detayını görebileceğim Metotdu ve View ı hazırlayalım. Actors/Index altında da Details butonunun ayarlamalarını yapalım.
-		Ardından Details View ı biraz bootstrap ile düzenleyelim.
+		Ardından Details View ı biraz bootstrap ile düzenleyelim. Index sayfasından da gerekli linkleri tanımlayarak eriştik.
+
+	27. Actor bilgilerinin düzenleneceği Edit metodu ve View hazırlanması. Edit View dan gelen bilgilerin VT tarafına gönderilmesi.
+		Test.
+
+	28. Actor bilgilerinin silineceği Delete metodu ve View hazırlanması.
+
