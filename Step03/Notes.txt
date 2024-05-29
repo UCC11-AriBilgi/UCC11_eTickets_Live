@@ -174,3 +174,5 @@ Step03 - Verilerle Çalışmak 27.5
 
 	28. Actor bilgilerinin silineceği Delete metodu ve View hazırlanması.
 
+	29. NotFound View hazırlanması
+
