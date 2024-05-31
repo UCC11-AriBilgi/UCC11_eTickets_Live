@@ -185,11 +185,35 @@ Step04 - Base Repository yapısının yerleştirilmesi 31.5
 		. Projenin tümünün uyumlu olabilmesi için gerekli Namespace,Assembly ayarlamaları(eTickets olcak şekilde)
 		. EF paketlerini yükleyelim. Copy sırasında gelmiyor o yüzden
 
-	Normalde veri alışverişlerinin genelde controllerlar üzerinden yapıldığı durumlar vardır. Ama bazı durumlarda bu pek efektif bir yaklaşım olmayabilir. (Özellikle birbire çok benzeyen metot yapıları VT haberleşmeleri açısından) Bunun yerine bunları birleştirecek şekilde "Service" türü yapılara yönelmek daha doğru bir seçenek olacaktır. (Olayları geriye daha derin bölgelere almak ve ortaklaştırmak(metot,işlemler...))
+	Şu ana kadar Actor verileri üzerinde List/Add/Update/Delete işlemlerini gerçekleştirdik. Bunları yaparken de Interface ve Service yapılarını kullandık. Bundan sonra ilerleyen kısımlarda aynı çalışmaları Cinema,Producer,Movie modelleri için de yapmamız gerekiyor. Fakat bu durum herbir bölümde herbirinin aynı veya benzer durumları için aynı kod bloklarının tekrarı gerekecektir. Bu da birazcık "kod kirliliği" dediğimiz duruma neden olacaktır. Vu yüzdendir ki bu işlemleri tekrar tekrar yapmak yerine bir base repository yapısı oluşturarak bu işlemleri bir kerede yaparak diğer modeller içinde kullanabilir duruma getirebiliriz. (Generic duruma getirmek)
 
-	İlgili verilerle çalışmaya başlamadan önce gerekli herbir model için bir service interface i yaratmak ile işe başlayabiliriz. Bunu da ilgili controller a enjecte ederek veri alış verişlerini sağlayabiliriz.
+	Bunun için bir "BaseRepository(Taban Depo)" yapısı kurmak iyi bir seçenektir. 
 
-	Hazırlık olması açısından gerekli olacak dizin yapısını oluşturalım;
-		. Data\Inferfaces (Interface tanımları için)
-		. Data\Services (Service tanımları için)
+	Öncelikle bir BaseRepository Interface'i ana fonksiyonlar için Base implementasyonları yaratalım.
+
+	Hazırlık olması açısından da Data\Base dizini yaratalım. Burada tanımlanacak yapıda her bir modelin ortak alanı olan Id bilgisini tekbir yerde toplamış olacağız.
+
+	30. Data\Base altında IEntityBase.cs isminde bir interface yaratalım.
+
+	31. Ardından Data\Base altında IEntityBaseRepository.cs interface'ini de oluşturalım. Bunun içersine Generic yapıyı sağlayacağımız tüm metotları toplayalım.
+
+		Generic : Generic type sayesinde, farklı veri tipleri için aynı kod bloğunu tekrar tekrar yazmamıza gerek kalmaz. Bu sayede daha temiz, okunaklı ve yenide kullanılabilir bir yapı sağlamış oluruz. Generic type kullanarak bir sınıf veya metot oluşturduğumuzda , bu sınıf veya metodun hangi veri tipleriyle kullanılabileceğini belirleyebiliriz. Böylece aynı sınıf metot farklı veri tipleriyle kullanılabilir durumu gelecektir.
+
+	32. Data\Base\EntityBaseRepository.cs classını yaratım IEntityBaseRepositor interface inden implement edelim
+
+	33. VT Context yapısını uygulayalım.(AppDbContext)
+
+	34. Önceden ActorsService içinde yapmış olduğumuz metotları buraya(merkez yapıya) taşıyalım. Yeni yapıya göre değişiklikleri uygulayalım.
+
+
+
+
+
+
+
+
+
+
+
+
 
