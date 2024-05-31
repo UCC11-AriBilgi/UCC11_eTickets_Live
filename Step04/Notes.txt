@@ -208,6 +208,9 @@ Step04 - Base Repository yapısının yerleştirilmesi 31.5
 	35. Aslındaha önce yapmış olduğumuz ActorsService olayı kaldırılmayacak. Bu yeni yapıya göre düzenlenecek.
 		IActorsService üzerine gelip yapılan tüm şeyleri kaldırabiliriz. Ama bu servisi ana yapıdan yararlanacağını söyleyerek. Ve Actor modelinde de ufak değişiklik yapalım.
 
+		Test edelim. Gördük ki önceki yapıda çalışan yerler artık merkezi ortak kısımdan çalışıyor.
+
+
 
 
 
