@@ -205,7 +205,8 @@ Step04 - Base Repository yapısının yerleştirilmesi 31.5
 
 	34. Önceden ActorsService içinde yapmış olduğumuz metotları buraya(merkez yapıya) taşıyalım. Yeni yapıya göre değişiklikleri uygulayalım.
 
-
+	35. Aslındaha önce yapmış olduğumuz ActorsService olayı kaldırılmayacak. Bu yeni yapıya göre düzenlenecek.
+		IActorsService üzerine gelip yapılan tüm şeyleri kaldırabiliriz. Ama bu servisi ana yapıdan yararlanacağını söyleyerek. Ve Actor modelinde de ufak değişiklik yapalım.
 
 
 
