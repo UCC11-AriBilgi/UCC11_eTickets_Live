@@ -210,6 +210,13 @@ Step04 - Base Repository yapısının yerleştirilmesi 31.5
 
 		Test edelim. Gördük ki önceki yapıda çalışan yerler artık merkezi ortak kısımdan çalışıyor.
 
+	Actor için uyarladığımız yapıyı artık yavaş yavaş geri kalan (Producer,Cinema,Movie) kısımlara da uyarlamaya başlayabiliriz.
+
+	36. Producer kısmı
+
+		36.1 Yeni yapıya göre IProducersService interfacei, ProducersService  yaratılması ve bunların uyarlanması. Bunu yaparken Producer modeli üzerinde de gerekli değişikliğin yapılması. Ve bu yapılan değişikliklerin(yeni servis yani) Program.cs altına Register edilmesi ki kullanılabilsin
+
+
 
 
 

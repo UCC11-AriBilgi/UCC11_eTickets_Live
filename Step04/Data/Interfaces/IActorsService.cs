@@ -7,7 +7,7 @@ namespace eTickets.Data.Interfaces
     // Bu interface üzerindekileri kaldırabiliriz. Ama yeni yarattığımız yapıdan kopyeleterek.
     public interface IActorsService : IEntityBaseRepository<Actor>
     {
-        // 20
+        // 20 Asağıdakilerin hepsi BaseRepository tarafına taşındı.
         //IEnumerable<Actor> GetAll();
         //Actor GetById(int id);
 

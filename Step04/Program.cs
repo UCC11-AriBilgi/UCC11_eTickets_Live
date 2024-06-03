@@ -23,9 +23,9 @@ namespace eTickets
             builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer
             (builder.Configuration.GetConnectionString("Connection")));
 
-            // 22.
             // Service Configuration
-            builder.Services.AddScoped<IActorsService,ActorsService>();
+            builder.Services.AddScoped<IActorsService,ActorsService>(); // 22.
+            builder.Services.AddScoped<IProducersService,ProducersService>(); // 36.1
       
                 
 
