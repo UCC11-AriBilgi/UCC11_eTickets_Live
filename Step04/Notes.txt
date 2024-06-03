@@ -226,6 +226,8 @@ Step04 - Base Repository yapısının yerleştirilmesi 31.5
 
 		36.5 Update ..
 
+		36.6 Delete ..
+
 
 
 
