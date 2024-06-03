@@ -201,7 +201,7 @@ Step04 - Base Repository yapısının yerleştirilmesi 31.5
 
 	32. Data\Base\EntityBaseRepository.cs classını yaratım IEntityBaseRepositor interface inden implement edelim
 
-	33. VT Context yapısını uygulayalım.(AppDbContext)
+	33. VT Context yapısını uygulayalım.(AppDbContext) 
 
 	34. Önceden ActorsService içinde yapmış olduğumuz metotları buraya(merkez yapıya) taşıyalım. Yeni yapıya göre değişiklikleri uygulayalım.
 
