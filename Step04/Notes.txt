@@ -228,6 +228,22 @@ Step04 - Base Repository yapısının yerleştirilmesi 31.5
 
 		36.6 Delete ..
 
+	37. Cinema kısmı
+
+		37.1 Yeni yapıya göre ICinemassService interfacei, CinemasService  yaratılması ve bunların uyarlanması. Bunu yaparken Cinema modeli üzerinde de gerekli değişikliğin yapılması. Ve bu yapılan değişikliklerin(yeni servis yani) Program.cs altına Register edilmesi ki kullanılabilsin. Diğer taraftan ilgi CinemasController üzerinde de düzenleme yapılması gerekiyor. Listing Test..
+
+		36.2 Aynı durumu Add,Update,Delete için yapılacak
+
+		36.3 Şu an için manuel olarak gerekli Create View larına ulaşabiliyoruz. Bunu bir buton yapısı haline çevirelim. Ve bunu PartialView mantığı ile kullanalım.
+
+			Views\Shared altına küçük bir view oluşturalım (_CreateItem.cshtml) ve Actors,Producers Viewlarına uygulayalım..Create test..ok
+
+		36.4 Details..
+
+		36.5 Update ..
+
+		36.6 Delete ..
+
 
 
 

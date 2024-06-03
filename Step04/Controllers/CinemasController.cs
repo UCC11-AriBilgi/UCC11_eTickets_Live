@@ -1,4 +1,5 @@
 ﻿using eTickets.Data;
+using eTickets.Data.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace eTickets.Controllers
@@ -7,15 +8,15 @@ namespace eTickets.Controllers
     {
         // injecting
         // 16
-        private readonly AppDbContext _context;
-
-        public CinemasController(AppDbContext context)
+        //private readonly AppDbContext _context;
+        private readonly ICinemasService _service;
+        public CinemasController(ICinemasService service)
         {
-            _context = context;
+            _service= service;
         }
         public IActionResult Index()
         {
-            var cinemaData = _context.Cinemas.ToList(); // VT den veri okunuyor
+            var cinemaData = _service.GetAllAsync();
 
             return View(cinemaData);
         }
