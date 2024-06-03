@@ -222,7 +222,9 @@ Step04 - Base Repository yapısının yerleştirilmesi 31.5
 
 			Views\Shared altına küçük bir view oluşturalım (_CreateItem.cshtml) ve Actors,Producers Viewlarına uygulayalım..Create test..ok
 
-		36.4 Details..Update
+		36.4 Details..
+
+		36.5 Update ..
 
 
 
