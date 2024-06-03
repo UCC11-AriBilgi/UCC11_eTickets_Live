@@ -48,8 +48,11 @@
     </div>
 </div>
 @* 25 *@
-<div style="position:fixed;right:25px;bottom:25px;" class="text-white">
+@* <div style="position:fixed;right:25px;bottom:25px;" class="text-white">
     <a asp-controller="Actors" asp-action="Create" class="btn btn-success">
         <i class="bi bi-plus-circle"> Yeni Ekle</i>
     </a>
-</div>
+</div> *@
+@* 36.2 *@
+@Html.Partial("_CreateItem","Actors")
+

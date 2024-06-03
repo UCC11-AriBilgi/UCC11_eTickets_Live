@@ -214,7 +214,15 @@ Step04 - Base Repository yapısının yerleştirilmesi 31.5
 
 	36. Producer kısmı
 
-		36.1 Yeni yapıya göre IProducersService interfacei, ProducersService  yaratılması ve bunların uyarlanması. Bunu yaparken Producer modeli üzerinde de gerekli değişikliğin yapılması. Ve bu yapılan değişikliklerin(yeni servis yani) Program.cs altına Register edilmesi ki kullanılabilsin
+		36.1 Yeni yapıya göre IProducersService interfacei, ProducersService  yaratılması ve bunların uyarlanması. Bunu yaparken Producer modeli üzerinde de gerekli değişikliğin yapılması. Ve bu yapılan değişikliklerin(yeni servis yani) Program.cs altına Register edilmesi ki kullanılabilsin. Diğer taraftan ilgi ProducersController üzerinde de düzenleme yapılması gerekiyor. Listing Test..ok
+
+		36.2 Aynı durumu Add,Update,Delete için yapılacak
+
+		36.3 Şu an için manuel olarak gerekli Create View larına ulaşabiliyoruz. Bunu bir buton yapısı haline çevirelim. Ve bunu PartialView mantığı ile kullanalım.
+
+			Views\Shared altına küçük bir view oluşturalım (_CreateItem.cshtml) ve Actors,Producers Viewlarına uygulayalım..Create test..ok
+
+		36.4 Details..Update
 
 
 
