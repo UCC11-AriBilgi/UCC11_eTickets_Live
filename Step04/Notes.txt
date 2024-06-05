@@ -232,17 +232,37 @@ Step04 - Base Repository yapısının yerleştirilmesi 31.5
 
 		37.1 Yeni yapıya göre ICinemassService interfacei, CinemasService  yaratılması ve bunların uyarlanması. Bunu yaparken Cinema modeli üzerinde de gerekli değişikliğin yapılması. Ve bu yapılan değişikliklerin(yeni servis yani) Program.cs altına Register edilmesi ki kullanılabilsin. Diğer taraftan ilgi CinemasController üzerinde de düzenleme yapılması gerekiyor. Listing Test..
 
-		36.2 Aynı durumu Add,Update,Delete için yapılacak
+		37.2 Aynı durumu Add,Update,Delete için yapılacak
 
-		36.3 Şu an için manuel olarak gerekli Create View larına ulaşabiliyoruz. Bunu bir buton yapısı haline çevirelim. Ve bunu PartialView mantığı ile kullanalım.
+		37.3 Şu an için manuel olarak gerekli Create View larına ulaşabiliyoruz. Bunu bir buton yapısı haline çevirelim. Ve bunu PartialView mantığı ile kullanalım.
 
 			Views\Shared altına küçük bir view oluşturalım (_CreateItem.cshtml) ve Actors,Producers Viewlarına uygulayalım..Create test..ok
 
-		36.4 Details..
+		37.4 Details..
 
-		36.5 Update ..
+		37.5 Update ..
 
-		36.6 Delete ..
+		37.6 Delete ..
+
+	38. Movie Kısmı
+		
+		Movie yapısı diğer modellerin (Actor,Cinema,Producer) yapısından biraz farklı. Diğer modeller ile ilişkilendirmeler var. Bu yüzden de biraz farklı olacak şeyler yapılmalı. Tabii ki yine geri planda Service yapısını haliyle kullanacak.
+
+		38.1 Interface ve Service classlarının oluşturulması (Data\Interfaces, Data\Services)
+			MoviesController üzerinde _context yapısını _service yapısını kullanacak şekilde değiştirelim.Neden çünkü tüm db işlemleri servicelere çekildi. 
+			Test...Index sayfası gelmedi.Şu ana kadar kullanmış olduğumuz yapı Movie modeline yetmedi. Dolayısı ile hata verdi. Çünkü Controllerdan GetAllAsync metodu ile almak istedik ama movie modelindeki ilişkilendirmelerden dolayı GetAllAysync buna cevap veremedi. Bu duruma göre bazı düzenlemeler yapmak gerekiyor.
+
+
+
+
+
+
+		38.2 Bu servis yapısını Program.cs altına register edelim.
+
+		Not : Movie modeli diğerlerinden biraz farklı olduğu için programlamada bize kolaylık sağlaması açısından bu tür bir durum için kendi modelimizi oluşturmamız daha kullanışlı olacaktır.
+
+
+		
 
 
 
