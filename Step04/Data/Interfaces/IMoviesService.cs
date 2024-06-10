@@ -1,5 +1,6 @@
 ﻿using eTickets.Data.Base;
 using eTickets.Models;
+using eTickets.ViewModels;
 
 namespace eTickets.Data.Interfaces
 {
@@ -8,11 +9,11 @@ namespace eTickets.Data.Interfaces
     {
         Task<Movie> GetMovieByIdAsync(int id);
 
-        Task AddNewMovieAsync(Movie movie);
+        Task AddNewMovieAsync(NewMovieVM movie);
 
-        Task UpdateMovieAsync(Movie movie);
+        Task UpdateMovieAsync(NewMovieVM movie);
 
-        // dropdown.
+        Task<NewMovieDropdownsVM> GetNewMovieDropdownsValues();
 
 
 

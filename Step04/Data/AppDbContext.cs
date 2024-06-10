@@ -1,5 +1,6 @@
 ﻿using eTickets.Models;
 using Microsoft.EntityFrameworkCore;
+using eTickets.ViewModels;
 
 namespace eTickets.Data
 {
@@ -51,6 +52,8 @@ namespace eTickets.Data
         public DbSet<Cinema> Cinemas { get; set; }
 
         public DbSet<Producer> Producers { get; set; }
+    // Models <--> VT
+public DbSet<eTickets.ViewModels.NewMovieVM> NewMovieVM { get; set; } = default!;
 
 
     }

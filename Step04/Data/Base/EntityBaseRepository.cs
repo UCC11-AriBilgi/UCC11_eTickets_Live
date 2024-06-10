@@ -25,7 +25,7 @@ namespace eTickets.Data.Base
             
         }
 
-        // Bu metot polymorphism olarak aynı isimde içeriği farklı ilişkilendirmele göre çalışacak olan metot.(aslında Movie durumu için gerekli oldu)
+        // Bu metot polymorphism olarak aynı isimde içeriği farklı ilişkilendirmelere göre çalışacak olan metot.(aslında Movie durumu için gerekli oldu)
         public async Task<IEnumerable<T>> GetAllAsync(params Expression<Func<T, object>>[] includeProperties)
         {
             IQueryable<T> query = _context.Set<T>();
@@ -41,9 +41,15 @@ namespace eTickets.Data.Base
             return await _context.Set<T>().FirstOrDefaultAsync(t => t.Id == id);
         }
 
-        public Task<T> GetByIdAsync(int id, params Expression<Func<T, object>>[] includeProperties)
+        // İlşkisel yapıya göre
+        public async Task<T> GetByIdAsync(int id, params Expression<Func<T, object>>[] includeProperties)
         {
-            throw new NotImplementedException();
+            IQueryable<T> query=_context.Set<T>();
+
+            query= includeProperties.Aggregate(query,(current,includeProperty)=>current.Include(includeProperty));
+
+            return await query.FirstOrDefaultAsync(n => n.Id == id);
+
         }
 
         public async Task AddAsync(T entity)

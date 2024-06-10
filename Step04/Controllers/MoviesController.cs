@@ -1,6 +1,7 @@
 ﻿using eTickets.Data;
 using eTickets.Data.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace eTickets.Controllers
@@ -22,8 +23,6 @@ namespace eTickets.Controllers
             _service= service;
         }
 
-
-
         public async Task<IActionResult> Index()
         {
             //var movieData = _context.Movies.ToList(); // VT den veri okunuyor
@@ -36,6 +35,24 @@ namespace eTickets.Controllers
 
 
             return View(movieData);
+        }
+
+        // 38.3
+
+        public async Task<IActionResult> Create()
+        {
+            // Controllerdan Create View ına oluşan dropdown bilgilerini aktarmam lazım ki görünebilsinler. 
+            var movieDropdownsData = await _service.GetNewMovieDropdownsValues();
+
+            // Oluşan dropdown içeriğini de ViewBag yöntemiyle View tarafına taşıyalım.
+            ViewBag.Cinemas = new SelectList(movieDropdownsData.Cinemas,"Id","Name");
+
+            ViewBag.Producers = new SelectList(movieDropdownsData.Producers,"Id","FullName");
+            
+            ViewBag.Actors = new SelectList(movieDropdownsData.Actors,"Id","FullName");
+
+            return View();
+
         }
     }
 }
