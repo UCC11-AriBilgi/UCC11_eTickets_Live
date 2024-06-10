@@ -259,7 +259,9 @@ Step04 - Base Repository yapısının yerleştirilmesi 31.5
 
 		38.2 Bu servis yapısını Program.cs altına register edelim.
 
-		Not : Movie modeli diğerlerinden biraz farklı olduğu için programlamada bize kolaylık sağlaması açısından bu tür bir durum için kendi modelimizi oluşturmamız daha kullanışlı olacaktır.
+		Not : Movie modeli diğerlerinden biraz farklı olduğu için programlamada bize kolaylık sağlaması açısından bu tür bir durum için kendi modelimizi oluşturmamız daha kullanışlı olacaktır. Bunları VM (ViewModel) olarak görebilirsiniz. Biz bu durumda kendi VM yapımızı oluşturalım.(\ViewModels) 
+
+
 
 
 		
