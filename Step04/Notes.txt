@@ -253,15 +253,13 @@ Step04 - Base Repository yapısının yerleştirilmesi 31.5
 			Test...Index sayfası gelmedi.Şu ana kadar kullanmış olduğumuz yapı Movie modeline yetmedi. Dolayısı ile hata verdi. Çünkü Controllerdan GetAllAsync metodu ile almak istedik ama movie modelindeki ilişkilendirmelerden dolayı GetAllAysync buna cevap veremedi. Bu duruma göre bazı düzenlemeler yapmak gerekiyor.
 
 
-
-
-
-
 		38.2 Bu servis yapısını Program.cs altına register edelim.
 
 		Not : Movie modeli diğerlerinden biraz farklı olduğu için programlamada bize kolaylık sağlaması açısından bu tür bir durum için kendi modelimizi oluşturmamız daha kullanışlı olacaktır. Bunları VM (ViewModel) olarak görebilirsiniz. Biz bu durumda kendi VM yapımızı oluşturalım.(\ViewModels) Bunun yanında viewlar içinde dropdown olarak gözükecek actor,cinemaiproducer gibi bilgilerin yerleştirileceği dropdown yapılarının da ayrı bir şekilde hazırlanmasını gerçekleştirelim.
 
 		38.3 Movie/Create kısmı
+
+
 
 
 		
