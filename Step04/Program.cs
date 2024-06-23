@@ -26,8 +26,8 @@ namespace eTickets
             // Service Configuration
             builder.Services.AddScoped<IActorsService,ActorsService>(); // 22.
             builder.Services.AddScoped<IProducersService,ProducersService>(); // 36.1
-            builder.Services.AddScoped<ICinemasService, CinemasService>(); // 37.1      
-            //builder.Services.AddScoped<IMoviesService,MoviesService>();
+            builder.Services.AddScoped<ICinemasService,CinemasService>(); // 37.1      
+            builder.Services.AddScoped<IMoviesService,MoviesService>(); //38.1
 
             var app = builder.Build();
 

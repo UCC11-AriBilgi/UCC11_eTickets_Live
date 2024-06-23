@@ -248,8 +248,9 @@ Step04 - Base Repository yapısının yerleştirilmesi 31.5
 		
 		Movie yapısı diğer modellerin (Actor,Cinema,Producer) yapısından biraz farklı. Diğer modeller ile ilişkilendirmeler var. Bu yüzden de biraz farklı olacak şeyler yapılmalı. Tabii ki yine geri planda Service yapısını haliyle kullanacak.
 
-		38.1 Interface ve Service classlarının oluşturulması (Data\Interfaces, Data\Services)
+		38.1 Interface ve Service classlarının oluşturulması (Data\Interfaces\IMoviesService, Data\Services\MoviesServices)
 			MoviesController üzerinde _context yapısını _service yapısını kullanacak şekilde değiştirelim.Neden çünkü tüm db işlemleri servicelere çekildi. 
+
 			Test...Index sayfası gelmedi.Şu ana kadar kullanmış olduğumuz yapı Movie modeline yetmedi. Dolayısı ile hata verdi. Çünkü Controllerdan GetAllAsync metodu ile almak istedik ama movie modelindeki ilişkilendirmelerden dolayı GetAllAysync buna cevap veremedi. Bu duruma göre bazı düzenlemeler yapmak gerekiyor.
 
 

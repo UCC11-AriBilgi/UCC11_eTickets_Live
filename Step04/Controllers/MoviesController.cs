@@ -31,10 +31,10 @@ namespace eTickets.Controllers
             
             //var movieData = _context.Movies.Include(c => c.Cinema).ToList(); // VT den veri okunuyor
 
-            var movieData=await _service.GetAllAsync(n=> n.Cinema); // ilişkilendirmeye girecek modelimi parametre olarak gönderiyoruz
+            var moviesData=await _service.GetAllAsync(n=> n.Cinema); // ilişkilendirmeye girecek modelimi parametre olarak gönderiyoruz.Include property
 
 
-            return View(movieData);
+            return View(moviesData);
         }
 
         // 38.3
