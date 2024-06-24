@@ -70,7 +70,7 @@
                                 @foreach (var actor in Model.Actors_Movies)
                                 {
                                     <div class="column">
-                                        <img class="border-info rounded-circle" src="@actor.Actor.ProfilePictureURL" style="max-width=150px" />
+                                        <img class="border-info rounded-circle" src="@actor.Actor.ProfilePictureURL" style="max-width:150px" />
                                         &nbsp;&nbsp;
                                         <a asp-controller="Actors" asp-action="Details" asp-route-id="@actor.ActorId">
                                             @actor.Actor.FullName
@@ -80,86 +80,25 @@
                                 }
                             </div>
                         </p>
-
-
-
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="card-footer">
+                        <div class="card-text">
+                            @* Ternary Operator kullanımı *@
+                            <a class="btn btn-success text-white @((DateTime.Now > Model.EndDate) ? "disabled" : "")"
+                                asp-controller="Orders"
+                                asp-action="AddItemToShoppingCart"
+                                asp-route-id="@Model.Id">
+                                    <i class="bi bi-cart-plus"></i> Sepete Ekle (Price @Model.Price.ToString("c"))
+                            </a>
+                            <a class="btn btn-outline-primary float-end" asp-action="Index">
+                                <i class="bi bi-eye-fill"></i> Listeye dön
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-<div>
-    <h4>Movie</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ImageURL)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ImageURL)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.StartDate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.StartDate)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.EndDate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.EndDate)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.MovieCategory)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.MovieCategory)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Cinema)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Cinema.Id)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Producer)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Producer.Id)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
 </div>
