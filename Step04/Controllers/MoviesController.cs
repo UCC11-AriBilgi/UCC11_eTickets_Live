@@ -2,6 +2,7 @@
 using eTickets.Data.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Mvc.ViewComponents;
 using Microsoft.EntityFrameworkCore;
 
 namespace eTickets.Controllers
@@ -38,6 +39,25 @@ namespace eTickets.Controllers
         }
 
         // 38.3
+        // Get: Movies/Details/1
+        public async Task<IActionResult> Details(int id)
+        {
+            // Üzerine gelen id parametresine göre ilgi movie kayıdını VT den alacak ve View a gönderecek
+
+            var movieDetails= await _service.GetMovieByIdAsync(id);
+
+            if (movieDetails == null)
+            {
+                return View("NotFound");
+            }
+            
+            return View(movieDetails);
+        }
+
+
+
+
+        // 38.4
 
         public async Task<IActionResult> Create()
         {

@@ -260,6 +260,8 @@ Step04 - Base Repository yapısının yerleştirilmesi 31.5
 
 		38.3 Movie/Details kısmı
 
+			Öncelikle MoviesController üzerinde Details metodunu yaratalım.
+
 
 
 
