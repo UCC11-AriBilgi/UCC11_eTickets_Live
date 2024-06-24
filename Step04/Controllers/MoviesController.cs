@@ -54,11 +54,8 @@ namespace eTickets.Controllers
             return View(movieDetails);
         }
 
-
-
-
         // 38.4
-
+        // Get : Movies/Create
         public async Task<IActionResult> Create()
         {
             // Controllerdan Create View ına oluşan dropdown bilgilerini aktarmam lazım ki görünebilsinler. 
