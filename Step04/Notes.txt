@@ -270,7 +270,11 @@ Step04 - Base Repository yapısının yerleştirilmesi 31.5
 
 		38.5 Movie/Edit kısmı
 			Öncelikle MoviesController üzerinde Edit(Get) metodunu yaratalım.
-			
+			Sonrasında MoviesController üzerinde Edit(Post) metodunu yaratalım.
+			Gerekli kontrolleri yaptıktan sonra test...(Ok)
+
+		38.6 İlk gelen ekrande bir arama kutusu yerleştirelim. Yani girilecek olan bilgilere göre VT üzerinde arama işlemini yapacak bir durum.
+			Öncelikle _Layout.cshtml üzerinde ilgili değişiklikleri yapalım.
 
 
 

@@ -143,5 +143,52 @@ namespace eTickets.Controllers
             return View(data);
         }
 
+        // Post : Movie/Edit/1
+        [HttpPost]
+        public async Task<IActionResult> Edit (int id,NewMovieVM data)
+        {
+            if (!ModelState.IsValid)
+            {
+                var movieDropdownsData = await _service.GetNewMovieDropdownsValues();
+
+                // Oluşan dropdown içeriğini de ViewBag yöntemiyle View tarafına taşıyalım.
+                ViewBag.Cinemas = new SelectList(movieDropdownsData.Cinemas, "Id", "Name");
+
+                ViewBag.Producers = new SelectList(movieDropdownsData.Producers, "Id", "FullName");
+
+                ViewBag.Actors = new SelectList(movieDropdownsData.Actors, "Id", "FullName");
+
+                return View(data);
+            }
+
+            await _service.UpdateMovieAsync(data);
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        // 38.6
+        public async Task<IActionResult> Filter(string searchString)
+        {
+            // Burası film adı veya Description bilgileri üzerinde arama yapacak bölüm...
+
+            // Öncelikle VT üzerindeki tüm Movie bilgilerini okuyalım.
+
+            var allMovies = await _service.GetAllAsync(n => n.Cinema);
+
+            // searchString doldurulmadan da arama butonuna basılmış olabilir. Bunun dolu olup olmadığına bir bakalım.
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                // eğer doluysa Name ve Description bilgileri üzerinde küçük harfli olarak arama
+                var filteredResult = allMovies
+                            .Where(n => n.Name.ToLower().Contains(searchString.ToLower()) || n.Description.ToLower().Contains(searchString.ToLower())).ToList();
+
+                return View("Index",filteredResult);
+                           
+            }
+
+            // Boş olarak bastıysa da
+            return View("Index", allMovies);
+        }
     }
 }
