@@ -264,7 +264,12 @@ Step04 - Base Repository yapısının yerleştirilmesi 31.5
 			Details View oluşturuldu
 
 		38.4 Movie/Create kısmı
-			Öncelikle MoviesController üzerinde Create metodunu yaratalım.
+			Öncelikle MoviesController üzerinde Create(Get) metodunu yaratalım.
+			Sonrasında MoviesController üzerinde Create(Post) metodunu yaratalım.
+			Gerekli kontrolleri yaptıktan sonra test...(Ok)
+
+		38.5 Movie/Edit kısmı
+			Öncelikle MoviesController üzerinde Edit(Get) metodunu yaratalım.
 			
 
 

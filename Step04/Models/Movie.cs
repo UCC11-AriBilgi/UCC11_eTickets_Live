@@ -29,7 +29,7 @@ namespace eTickets.Models
         public DateTime EndDate { get; set; }
 
         [Display(Name = "Category")]
-        public MovieCategory? MovieCategory { get; set; } // Burayı besleyecek yer MovieCategory enum'ı
+        public MovieCategory MovieCategory { get; set; } // Burayı besleyecek yer MovieCategory enum'ı
 
         // Relations
         // Many-to-Many

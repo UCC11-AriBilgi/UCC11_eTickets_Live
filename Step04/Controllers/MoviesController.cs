@@ -1,5 +1,6 @@
 ﻿using eTickets.Data;
 using eTickets.Data.Interfaces;
+using eTickets.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewComponents;
@@ -71,5 +72,76 @@ namespace eTickets.Controllers
             return View();
 
         }
+
+        // Post: Movie/Create
+        [HttpPost]
+        public async Task<IActionResult> Create (NewMovieVM movie)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Herhangi bir Post anında eğer sayfada model durumum geçerli değilse(modele bazı uyumsuzluklar varsa) bu bloğa düşecektir. Dolayısı ile tekrardan View'a dönüş yapmak gerekecektir. Fakat View ekranındaki dropdownlist bilgileri ViewBag yöntemiyle oluşturulduğu için bu bilgiler Post işlemi sırasında ViewBag in bu tür durumlarda veri tutamadığı için kaybolacaktır. Dolayısı ile bunları tekrardan oluşturmalıyız.
+                
+                // Controllerdan Create View ına oluşan dropdown bilgilerini aktarmam lazım ki görünebilsinler. 
+                var movieDropdownsData = await _service.GetNewMovieDropdownsValues();
+
+                // Oluşan dropdown içeriğini de ViewBag yöntemiyle View tarafına taşıyalım.
+                ViewBag.Cinemas = new SelectList(movieDropdownsData.Cinemas, "Id", "Name");
+
+                ViewBag.Producers = new SelectList(movieDropdownsData.Producers, "Id", "FullName");
+
+                ViewBag.Actors = new SelectList(movieDropdownsData.Actors, "Id", "FullName");
+
+                return View(movie);
+
+            }
+            // Eğer durum uygunsa
+            await _service.AddNewMovieAsync(movie);
+
+            return RedirectToAction(nameof(Index));
+        }
+
+
+        // 38.5
+        // Get : Movie/Edit/1
+        public async Task<IActionResult> Edit(int id)
+        {
+            var movieDetails = await _service.GetMovieByIdAsync(id); // Var mı / yok mu
+
+            if (movieDetails == null)
+            {
+                return View("NotFound");
+            }
+
+            // Update etme modunda olduğum için bulduğum movie bilgilerini gerekli View'a göndereceğim
+
+            var data = new NewMovieVM()
+            {
+                Id = movieDetails.Id,
+                Name = movieDetails.Name,
+                Description = movieDetails.Description,
+                Price = movieDetails.Price,
+                StartDate = movieDetails.StartDate,
+                EndDate = movieDetails.EndDate,
+                ImageURL = movieDetails.ImageURL,
+                MovieCategory = movieDetails.MovieCategory,
+                CinemaId = movieDetails.CinemaId,
+                ProducerId = movieDetails.ProducerId,
+                ActorIds = movieDetails.Actors_Movies.Select(acmo => acmo.ActorId).ToList()
+            };
+
+            //DropdownList kısmı
+            // Controllerdan Create View ına oluşan dropdown bilgilerini aktarmam lazım ki görünebilsinler. 
+            var movieDropdownsData = await _service.GetNewMovieDropdownsValues();
+
+            // Oluşan dropdown içeriğini de ViewBag yöntemiyle View tarafına taşıyalım.
+            ViewBag.Cinemas = new SelectList(movieDropdownsData.Cinemas, "Id", "Name");
+
+            ViewBag.Producers = new SelectList(movieDropdownsData.Producers, "Id", "FullName");
+
+            ViewBag.Actors = new SelectList(movieDropdownsData.Actors, "Id", "FullName");
+
+            return View(data);
+        }
+
     }
 }
