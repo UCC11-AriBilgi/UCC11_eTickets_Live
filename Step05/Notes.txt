@@ -276,7 +276,14 @@ Step04 - Base Repository yapısının yerleştirilmesi 31.5
 		38.6 İlk gelen ekranda bir arama kutusu yerleştirelim. Yani girilecek olan bilgilere göre VT üzerinde arama işlemini yapacak bir durum.
 			Öncelikle _Layout.cshtml üzerinde ilgili değişiklikleri yapalım. Bir arama kutusu konuldu. Arama yapılacak (Movie name, description üzerinde olacak şekilde) kelimeler bu kutucuğa girilecek ve controller üzerinde arama metodu çalışacak ve ilgili sonuçları getirecek şekilde.
 
+--------------------------------------------------------------------------------------
+Step05 - Authentication ve Authorization kısmının emtegre edilmesi
 
+	Not : 
+		. Solution içinde Step05 isimli yeni proje açalım.
+		. Step04 içindeki yapılanları bu projeye kopyalayalım.	(Controller,Data,Migrations,Models,ProjectItems,Views,appsettings.json,Program.cs)
+		. Projenin tümünün uyumlu olabilmesi için gerekli Namespace,Assembly ayarlamaları(eTickets olcak şekilde)
+		. EF paketlerini yükleyelim. Copy sırasında gelmiyor o yüzden
 
 
 
