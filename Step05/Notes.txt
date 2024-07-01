@@ -299,7 +299,12 @@ Step05 - Authentication ve Authorization kısmının emtegre edilmesi
 
 		42. Identity tarafı için tabloların bazı örnek veriler ile Seed edilmesi. Bunu yaparken Data/Static dizini altına statik olacak şekilde bir UserRoles.cs ekleyelim.
 
-		43. Program.cs altında bunun tanımlanması.
+		43. Program.cs altında Identity operasyonu için gerekli servis tanımlarının yapılması. Test
+
+		44. Kullanıcıların sisteme giriş , kayıt, vs işlemlerini yönetecek olan bir controller yaratalım. (AccountController) .Gerekli tanımları yapalım.
+
+		45. Bir UserLogin formu oluşturacağız. Fakat normal yapıdan farklı olarak kendimize göre bir ViewModel oluşturarak(LoginVM)
+			
 
 
 

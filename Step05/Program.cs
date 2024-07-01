@@ -33,7 +33,7 @@ namespace eTickets
             builder.Services.AddScoped<IMoviesService,MoviesService>(); //38.1
 
             // Authentication and Authorization Services
-            builder.Services.AddIdentity<ApplicationUser, IdentityRole>();
+            builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
             builder.Services.AddMemoryCache();
             builder.Services.AddSession();
             builder.Services.AddAuthentication(options =>
@@ -60,7 +60,8 @@ namespace eTickets
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            app.UseAuthorization(); // Kimlik doğrulama
+            app.UseAuthorization(); // Yetkilendirme
 
             //app.MapControllerRoute(
             //    name: "default",
@@ -72,7 +73,7 @@ namespace eTickets
                     pattern: "{controller=Movies}/{action=Index}/{id?}");
             // 15
             AppDbInitializer.Seed(app);
-
+            // Seed User and Roles
             AppDbInitializer.SeedUsersAndRolesAsync(app).Wait(); // await
 
 
