@@ -1,12 +1,13 @@
 ﻿using eTickets.Models;
 using Microsoft.EntityFrameworkCore;
 using eTickets.ViewModels;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace eTickets.Data
 {
     // Models <--> VT
     // Bu tür bir tanım için EntityFrameworkCore'ın hazır DbContext sınıfından kalıtıyorum.
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<ApplicationUser> //40
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
@@ -53,7 +54,7 @@ namespace eTickets.Data
 
         public DbSet<Producer> Producers { get; set; }
     // Models <--> VT
-public DbSet<eTickets.ViewModels.NewMovieVM> NewMovieVM { get; set; } = default!;
+        public DbSet<eTickets.ViewModels.NewMovieVM> NewMovieVM { get; set; } = default!;
 
 
     }

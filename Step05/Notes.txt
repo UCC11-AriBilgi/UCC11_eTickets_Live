@@ -285,5 +285,17 @@ Step05 - Authentication ve Authorization kısmının emtegre edilmesi
 		. Projenin tümünün uyumlu olabilmesi için gerekli Namespace,Assembly ayarlamaları(eTickets olcak şekilde)
 		. EF paketlerini yükleyelim. Copy sırasında gelmiyor o yüzden
 
+		Projeye bu yapının entegre edilebilmesi için IdentityFramework kütüphanesinin tanıtılması gerekiyor. Böylelikle sistem üzerinde kullanıcılar(Users),yetkiler(Roles),kullanıcı yöneticisi(User Manager),yetki yöneticisi(Role Manager) gibi kavramları da dahil etmiş olacağız.
+
+		Bu işlemleri gerçekleştirebilmemiz için öncelikle Microsoft.AspNetCore.Identity.EntityFrameworkCore paketinin yüklenmesi gerekmekte. Ve diğer paketleri
+		(Nuget PM ile)
+
+		39. Öncelikle Yetkilendirme tablolarının VT tanıtılması işlemi
+			Bunun için Model klasörüne ApplicationUser.cs isimli bir class tanımı yapalım. Ve bunu IdentityUser classından kalıtım alalım. Ardından tanımımızı yapalım.
+
+		40. AppDbContext altında DbContext tanımımızı --> IdentityDbContext<ApplicationUser> güncelleyelim.
+
+		41. Bu değişikliği yaptıktan sonra bu durumun VT tarafına güncellenmesi için yeni bir migration tanımlanması ve VT nin update edilmesi
+
 
 
