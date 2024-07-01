@@ -1,6 +1,9 @@
-using eTickets.Data;
+﻿using eTickets.Data;
 using eTickets.Data.Interfaces;
 using eTickets.Data.Services;
+using eTickets.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace eTickets
@@ -19,7 +22,7 @@ namespace eTickets
             // 7.
             //builder.Services.AddDbContext<AppDbContext>();
             // 10
-            // appsettings.json dosyas� i�inde bulunan Connection Stringi ��reniyor.
+            // appsettings.json dosyasý içinde bulunan Connection Stringi öðreniyor.
             builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer
             (builder.Configuration.GetConnectionString("Connection")));
 
@@ -29,6 +32,19 @@ namespace eTickets
             builder.Services.AddScoped<ICinemasService,CinemasService>(); // 37.1      
             builder.Services.AddScoped<IMoviesService,MoviesService>(); //38.1
 
+            // Authentication and Authorization Services
+            builder.Services.AddIdentity<ApplicationUser, IdentityRole>();
+            builder.Services.AddMemoryCache();
+            builder.Services.AddSession();
+            builder.Services.AddAuthentication(options =>
+            {
+                options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            });
+
+
+
+
+            // Esas programın ayağa kalktığı bölüm
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -56,6 +72,8 @@ namespace eTickets
                     pattern: "{controller=Movies}/{action=Index}/{id?}");
             // 15
             AppDbInitializer.Seed(app);
+
+            AppDbInitializer.SeedUsersAndRolesAsync(app).Wait(); // await
 
 
             app.Run();

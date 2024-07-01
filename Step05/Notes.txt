@@ -299,6 +299,8 @@ Step05 - Authentication ve Authorization kısmının emtegre edilmesi
 
 		42. Identity tarafı için tabloların bazı örnek veriler ile Seed edilmesi. Bunu yaparken Data/Static dizini altına statik olacak şekilde bir UserRoles.cs ekleyelim.
 
+		43. Program.cs altında bunun tanımlanması.
+
 
 
 
