@@ -1,4 +1,7 @@
 ﻿using eTickets.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Identity.Client;
+using eTickets.Data.Static;
 
 namespace eTickets.Data
 {
@@ -241,9 +244,75 @@ namespace eTickets.Data
 
                     context.SaveChanges();
                 }
-
             }
         }
 
+        public static async Task SeedUsersAndRolesAsync(IApplicationBuilder applicationBuilder)
+        {
+            using (var serviceScope = applicationBuilder.ApplicationServices.CreateScope())
+            {
+                // Roles tanımları
+
+                var roleManager = serviceScope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+
+                if (!await roleManager.RoleExistsAsync(UserRoles.Admin)) 
+                { 
+                    await roleManager.CreateAsync(new IdentityRole(UserRoles.Admin));
+                }
+
+                if (!await roleManager.RoleExistsAsync(UserRoles.User))
+                {
+                    await roleManager.CreateAsync(new IdentityRole(UserRoles.User));
+                }
+
+                // User tanımları
+                var userManager = serviceScope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+
+                // admin haklarına sahip kullanıcı yaratılması
+                string adminUserEMail = "admin@etickets.com";
+
+                var adminUser=await userManager.FindByEmailAsync(adminUserEMail);
+
+
+
+                if (adminUser == null)
+                {
+                    // eğer herhangi bir admin user bulamamışsan yarat
+                    var newAdminUser = new ApplicationUser()
+                    {
+                        FullName = "Admin User",
+                        UserName = "admin-user",
+                        Email = adminUserEMail,
+                        EmailConfirmed = true
+                    };
+
+                    await userManager.CreateAsync(newAdminUser,"1234"); // Kullanıcı yaratılıyor
+                    await userManager.AddToRoleAsync(newAdminUser, UserRoles.Admin); // admin hakkı veriliyor.
+                }
+
+                // normal user haklarına sahip kullanıcı yaratılması
+                string appUserEMail = "user@etickets.com";
+
+                var appUser = await userManager.FindByEmailAsync(appUserEMail);
+
+
+
+                if (appUser == null)
+                {
+                    // eğer herhangi bir normal user bulamamışsan yarat
+                    var newAppUser = new ApplicationUser()
+                    {
+                        FullName = "Application User",
+                        UserName = "app-user",
+                        Email = appUserEMail,
+                        EmailConfirmed = true
+                    };
+
+                    await userManager.CreateAsync(newAppUser, "1234"); // Kullanıcı yaratılıyor
+                    await userManager.AddToRoleAsync(newAppUser, UserRoles.User); // normal user hakkı veriliyor.
+                }
+
+            }
+        }
     }
 }
